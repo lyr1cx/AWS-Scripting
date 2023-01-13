@@ -1,0 +1,5 @@
+aws ec2 describe-instances --query 'Reservations[].Instances[?LaunchTime>=`2022-01-01` && LaunchTime<=`2022-12-31`][].{id:InstanceId, Name: Tags[?Key==`Name`]|[0].Value, launch:LaunchTime}' --filter "Name=tag:Name,Values=VALUESGOHERE" --output table --profile prod --region us-east-1
+
+Modify the dates within to your specific needs, make sure to change the region to the specific region you require, and also the profile whether dev/prod/qa environment (as configured within your ~/.aws folder). Values= can be changed to query on keywords contained within the server names as needed.
+
+This will output to a table format, but you can change that to a text file, etc.

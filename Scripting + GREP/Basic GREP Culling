@@ -1,0 +1,3 @@
+cat DATAFILEGOESHERE.txt | grep 'PrivateIpAddress\|InstanceId\|PrivateDnsName'  >RESULTS.txt
+
+modify the grep parameters as needed for the data you seek.

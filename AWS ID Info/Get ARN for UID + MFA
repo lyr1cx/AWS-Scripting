@@ -1,0 +1,7 @@
+UID:
+----
+aws sts get-caller-identity
+
+MFA:
+----
+aws iam list-mfa-devices

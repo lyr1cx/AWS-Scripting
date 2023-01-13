@@ -1,0 +1,5 @@
+for things in $(cat textfilegoesherewithDATA.txt); do aws ec2 describe-network-interfaces --filters Name=addresses.private-ip-address,Values=$things --profile prod --region us-east-1; done >FINALDATAOUTPUT.txt
+
+“Things” - is the variable
+Value = $things
+Output file goes outside the loop and can be changed based on needs.
